@@ -20,6 +20,7 @@ public class JobTest {
     Job job2;
     Job job4;
     Job job5; //all fields equal to job4 except ID
+    Job job6;
 
 
     @Before
@@ -27,8 +28,9 @@ public class JobTest {
 
         job1 = new Job();
         job2 = new Job();
-        job4 = new Job("Product", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        job5 = new Job("Product", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        job6 = new Job("Product tester", new Employer(), new Location(), new PositionType(), new CoreCompetency());
     }
 
     @Test
@@ -82,6 +84,8 @@ public class JobTest {
     @Test
     public void testJobConstructorSetsAllFields4() {
         assertTrue(job4.getCoreCompetency() instanceof CoreCompetency);
+        //assertTrue(job4.getCoreCompetency().getValue() == "Perggsistence"); // looks like we can put all tests in one test and IDE will show which sub-test failed
+
 
     }
 
@@ -93,12 +97,21 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields5() {
-        assertEquals("Product", job4.getName());
+        assertEquals("Product tester", job4.getName());
     }
 
     @Test
     public void testJobsForEquality() {
         assertEquals(false, job4.equals(job5));
+    }
+
+    //test for Job.toString()
+    @Test
+    public void testForToString() {
+        //test if first line of output has empty line
+        // pay attention that when you use .getEmployer() and .getEmployer().getValue(), you receive the same result because when you just do .getEmployer() it automatically calls for .toString() set in Employer, which returns just value!!!
+        //assertEquals("" + "\n" + "ID: " + job5.getId() + "\n" + "Name: " + job5.getName() + "\n" + "Employer: " + job5.getEmployer().getValue() +"\n" + "Location: " + job5.getLocation().getValue() + "\n" + "Position Type: " + job5.getPositionType() + "\n" + "Core Competency: " + job5.getCoreCompetency() + "\n" + "", job5.toString());
+        assertEquals("" + "\n" + "ID: " + job6.getId() + "\n" + "Name: " + job6.getName() + "\n" + "Employer: " + "Data not available" +"\n" + "Location: " + "Data not available" + "\n" + "Position Type: " + "Data not available" + "\n" + "Core Competency: " + "Data not available" + "\n" + "", job6.toString());
     }
 
 
