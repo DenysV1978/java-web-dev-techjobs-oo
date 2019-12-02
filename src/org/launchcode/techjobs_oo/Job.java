@@ -53,24 +53,21 @@ public class Job {
 
     @Override
     public String toString() {
-        String string = "" + "\n" + "ID: " + this.getId() +"\n" + "Name: " + this.getName() + "\n" + "Employer: " + this.getEmployer().getValue() + "\n" + "Location: " + this.getLocation() + "\n" + "Position Type: " + this.getPositionType() + "\n" + "Core Competency: " + this.getCoreCompetency()+ "\n" + "";
+        String string1 = "" + "\n" + "ID: " + this.getId() +"\n" + "Name: " + this.getName() + "\n" + "Employer: " + this.getEmployer().getValue() + "\n" + "Location: " + this.getLocation() + "\n" + "Position Type: " + this.getPositionType() + "\n" + "Core Competency: " + this.getCoreCompetency()+ "\n" + "";
 
-        if(string.contains("null")) {
-            String[] array = string.split("null");
+        if(string1.contains("null")) {
+            String[] array = string1.split("null");
+            string1 = "";
             String noData = "Data not available";
             for(int i=0; i<array.length; i++) {
-                string +=array[i];
+                string1 +=array[i];
                 if(i == array.length-1) {
                     break;
                 }
-                string +=noData;
+                string1 +=noData;
             };
-
-            return string;
-
-        }
-            return string;
-
+                  }
+            return string1;
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID

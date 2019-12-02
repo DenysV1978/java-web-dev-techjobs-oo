@@ -6,7 +6,7 @@ public class Main {
         Job job1 = new Job("Product tester", new Employer(), new Location(), new PositionType(), new CoreCompetency());
         Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
 //        System.out.println(job2.getName().getClass());
-        System.out.println(job1);
+        System.out.println(job1.toString());
 //        System.out.println(job2.getEmployer().getClass());
         Job job3 = new Job("Ice cream taster", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Taste"));
 

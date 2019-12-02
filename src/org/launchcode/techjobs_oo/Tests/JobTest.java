@@ -110,7 +110,7 @@ public class JobTest {
     public void testForToString() {
         //test if first line of output has empty line
         // pay attention that when you use .getEmployer() and .getEmployer().getValue(), you receive the same result because when you just do .getEmployer() it automatically calls for .toString() set in Employer, which returns just value!!!
-        //assertEquals("" + "\n" + "ID: " + job5.getId() + "\n" + "Name: " + job5.getName() + "\n" + "Employer: " + job5.getEmployer().getValue() +"\n" + "Location: " + job5.getLocation().getValue() + "\n" + "Position Type: " + job5.getPositionType() + "\n" + "Core Competency: " + job5.getCoreCompetency() + "\n" + "", job5.toString());
+        assertEquals("" + "\n" + "ID: " + job5.getId() + "\n" + "Name: " + job5.getName() + "\n" + "Employer: " + job5.getEmployer().getValue() +"\n" + "Location: " + job5.getLocation().getValue() + "\n" + "Position Type: " + job5.getPositionType() + "\n" + "Core Competency: " + job5.getCoreCompetency() + "\n" + "", job5.toString());
         assertEquals("" + "\n" + "ID: " + job6.getId() + "\n" + "Name: " + job6.getName() + "\n" + "Employer: " + "Data not available" +"\n" + "Location: " + "Data not available" + "\n" + "Position Type: " + "Data not available" + "\n" + "Core Competency: " + "Data not available" + "\n" + "", job6.toString());
     }
 
